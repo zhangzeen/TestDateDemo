@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     private final static String LOG_LOOK="log_look";
     private Long oldTime;
     private Long currentTime;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         if (isFirst){
             et_test.setText("欢迎初次使用");
         }else {
-            if(Math.abs(((currentTime - oldTime)/(1000))) <60){
+            if(Math.abs(((currentTime - oldTime)/(24*3600*1000))) <3){
                 et_test.setText("欢迎经常使用");
             }else {
                 et_test.setText("好久不见，欢迎再次使用");
